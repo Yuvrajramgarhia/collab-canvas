@@ -1,0 +1,20 @@
+{
+  "name": "collab-canvas",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n server,client -c blue,green \"npm run dev -w server\" \"npm run dev -w client\"",
+    "dev:lan": "concurrently -k -n server,client -c blue,green \"npm run dev -w server\" \"npm run dev -w client -- --host\"",
+    "build": "npm run build -w client",
+    "start": "npm start -w server",
+    "typecheck": "npm run typecheck -w client",
+    "test:sync": "node scripts/sync-test.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "9.1.0"
+  }
+}

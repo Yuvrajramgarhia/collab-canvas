@@ -1,0 +1,16 @@
+# Optional: local PostgreSQL for persistence.
+#   docker compose up -d
+#   DATABASE_URL=postgres://canvas:canvas@localhost:5432/canvas npm run dev
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: canvas
+      POSTGRES_PASSWORD: canvas
+      POSTGRES_DB: canvas
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:

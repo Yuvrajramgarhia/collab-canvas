@@ -1,0 +1,19 @@
+{
+  "name": "collab-canvas-server",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "start": "NODE_ENV=production node index.js"
+  },
+  "dependencies": {
+    "express": "4.21.2",
+    "lib0": "0.2.98",
+    "pg": "8.13.1",
+    "ws": "8.18.0",
+    "y-protocols": "1.0.6",
+    "yjs": "13.6.20"
+  }
+}
